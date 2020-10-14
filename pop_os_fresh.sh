@@ -48,7 +48,7 @@ gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.
 
 #setup autologin
 hello=$(whoami)
-sudo sed -i 's/#  AutomaticLoginEnable =True[^ ]*/AutomaticLoginEnable=True/' /etc/gdm3/custom.conf
+sudo sed -i 's/#  AutomaticLoginEnable = True[^ ]*/AutomaticLoginEnable=True/' /etc/gdm3/custom.conf
 sudo sed -i 's/#  AutomaticLogin = user1[^ ]*/AutomaticLogin='"$hello"'/' /etc/gdm3/custom.conf
 
 #check/update firmwares
