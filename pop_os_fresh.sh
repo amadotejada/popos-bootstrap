@@ -10,9 +10,9 @@ sudo apt install -y gnome-tweaks git
 git clone https://github.com/amadotejada/popos-bootstrap.git ~/macos
 mkdir ~/.themes
 mkdir ~/.icons
-mv ~/macos/themes/* ~/.themes
-mv ~/macos/icons/* ~/.icons
-mv ~/macos/wallpapers/* /usr/share/backgrounds/
+mv -f ~/macos/themes/* ~/.themes
+mv -f ~/macos/icons/* ~/.icons
+mv -f ~/macos/wallpapers/* /usr/share/backgrounds/
 
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
