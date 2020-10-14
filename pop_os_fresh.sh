@@ -47,4 +47,4 @@ fwupdmgr update
 
 firefox https://extensions.gnome.org/extension/307/dash-to-dock/
 
-echo "\nDone - Reboot"
+echo "Done - Reboot"
