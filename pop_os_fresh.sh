@@ -5,7 +5,7 @@ xrandr --output eDP-1 --mode 1920x1080
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 
 #apt/flatpak updates
-sudo apt update -y &&  sudo apt full-upgrade -y &&  sudo apt autoremove -y &&  sudo apt clean -y &&  sudo apt autoclean -y
+sudo apt update -y &&  sudo apt full-upgrade -y
 sudo flatpak update
 sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
