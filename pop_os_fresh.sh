@@ -4,6 +4,7 @@ flatpak update
 pop-upgrade release update
 pop-upgrade release upgrade
 
+#dependency
 apt install -y gnome-tweaks git
 
 git clone https://github.com/amadotejada/popos-bootstrap.git ~/macos
@@ -21,7 +22,7 @@ gsettings set org.gnome.desktop.interface icon-theme 'BigSur'
 gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors-light'
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/macOS-BS2.jpg'
 gsettings get org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/macOS-BS1.jpg'
-#dependency
+
 wget https://go.microsoft.com/fwlink/?LinkID=760868 -O ~/vscode-latest.deb
 apt install -y ./vscode-latest.deb
 
@@ -54,6 +55,3 @@ case "$prompt" in
     n) do echo bye ;;
     *) echo "Enter y or n" ;;
 esac
-
-
-
