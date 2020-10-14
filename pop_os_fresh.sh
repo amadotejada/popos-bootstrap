@@ -4,7 +4,8 @@ flatpak update
 pop-upgrade release update
 pop-upgrade release upgrade
 
-apt install -y git gnome-tweak-tool gnome-shell-extensions
+apt install -y gnome-tweaks git
+
 git clone https://github.com/amadotejada/popos-bootstrap.git ~/macos
 mkdir ~/.themes
 mkdir ~/.icons
@@ -12,9 +13,15 @@ mv ~/macos/themes/* ~/.themes
 mv ~/macos/icons/* ~/.icons
 mv ~/macos/wallpapers/* /usr/share/backgrounds/
 
+gsettings set org.gnome.mutter center-new-windows 'true'
+gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
+gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-dark"
+gsettings set org.gnome.desktop.wm.preferences theme "WhiteSur-dark"
+gsettings set org.gnome.desktop.interface icon-theme 'BigSur'
+gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors-light'
+gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/macOS-BS2.jpg'
+gsettings get org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/macOS-BS1.jpg'
 #dependency
-apt install -y gnome-tweaks git
-
 wget https://go.microsoft.com/fwlink/?LinkID=760868 -O ~/vscode-latest.deb
 apt install -y ./vscode-latest.deb
 
@@ -28,15 +35,6 @@ wget https://addons.mozilla.org/firefox/downloads/latest/chrome-gnome-shell@gnom
 firefox ~/chrome-gnome-shell.xpi
 
 apt install -y vlc slack elegram-desktop mattermost-desktop spotify-client gimp discord caffeine
-
-gsettings set org.gnome.mutter center-new-windows 'true'
-gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
-gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-dark"
-gsettings set org.gnome.desktop.wm.preferences theme "WhiteSur-dark"
-gsettings set org.gnome.desktop.interface icon-theme 'BigSur'
-gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors-light'
-gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/macOS-BS2.jpg'
-gsettings get org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/macOS-BS1.jpg'
 
 curl https://build.opensuse.org/projects/home:manuelschneid3r/public_key |  apt-key add -
 echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_20.04/ /' |  tee /etc/apt/sources.list.d/home:manuelschneid3r.list
