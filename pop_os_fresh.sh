@@ -1,5 +1,5 @@
 
-sudo apt update -y &&  apt full-upgrade -y &&  apt autoremove -y &&  apt clean -y &&  apt autoclean -y
+sudo apt update -y &&  sudo apt full-upgrade -y &&  sudo apt autoremove -y &&  sudo apt clean -y &&  sudo apt autoclean -y
 sudo flatpak update
 sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
@@ -10,9 +10,9 @@ sudo apt install -y gnome-tweaks git caffeine
 git clone https://github.com/amadotejada/popos-bootstrap.git ~/macos
 mkdir ~/.themes
 mkdir ~/.icons
-mv -f ~/macos/themes/* ~/.themes
-mv -f ~/macos/icons/* ~/.icons
-mv -f ~/macos/wallpapers/* /usr/share/backgrounds/
+cp -rf ~/macos/themes/* ~/.themes
+cp -rf ~/macos/icons/* ~/.icons
+cp -rf ~/macos/wallpapers/* /usr/share/backgrounds/
 
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
@@ -47,4 +47,4 @@ fwupdmgr update
 
 firefox https://extensions.gnome.org/extension/307/dash-to-dock/
 
-echo "Done - Reboot"
+echo "\nDone - Reboot"
