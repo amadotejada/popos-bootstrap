@@ -3,6 +3,8 @@
 gsettings set com.system76.hidpi enable false
 xrandr --output eDP-1 --mode 1920x1080
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+gsettings set org.gnome.desktop.interface cursor-size 48
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.2
 killall -3 gnome-shell
 
 #apt/flatpak updates
@@ -23,8 +25,6 @@ cp -rf ~/macos/icons/* ~/.icons
 cp -rf ~/macos/wallpapers/* /usr/share/backgrounds/
 
 #set theme
-gsettings set org.gnome.desktop.interface cursor-size 48
-gsettings set org.gnome.desktop.interface text-scaling-factor 1.2
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/tony-webster-97532.jpg'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
