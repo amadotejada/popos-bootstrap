@@ -47,10 +47,4 @@ fwupdmgr update
 
 firefox https://extensions.gnome.org/extension/307/dash-to-dock/
 
-echo "\nDone - reboot\n"
-# read -p "Reboot? [Y,n]" input
-# if [[ $input == "Y" || $input == "y" ]]; then
-#         sudo reboot now
-# else
-#         echo "bye"
-# fi
+echo "Done - Reboot"
