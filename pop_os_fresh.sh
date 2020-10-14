@@ -32,10 +32,6 @@ gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-dark"
 gsettings set org.gnome.desktop.wm.preferences theme "WhiteSur-dark"
 gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors-light'
 
-# gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-# gsettings set org.gnome.desktop.interface icon-theme 'BigSur'
-# gsettings get org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/macOS-BS1.jpg'
-
 wget https://go.microsoft.com/fwlink/?LinkID=760868 -O ~/vscode-latest.deb
 sudo apt install -y ./vscode-latest.deb
 
@@ -50,7 +46,24 @@ firefox https://extensions.gnome.org/extension/307/dash-to-dock/
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock animate-show-apps false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
 
-sudo flatpak -y install mattermost telegram slack discord app/org.gimp.GIMP/x86_64/stable app/org.videolan.VLC/x86_64/stable us.zoom.Zoom
+#setup autologin
+hello=$(whoami)
+sudo sed -i 's/#  AutomaticLoginEnable =True[^ ]*/AutomaticLoginEnable=True/' /etc/gdm3/custom.conf
+sudo sed -i 's/#  AutomaticLogin = user1[^ ]*/AutomaticLogin='"$hello"'/' /etc/gdm3/custom.conf
+
+#check/update firmwares
+fwupdmgr get-devices
+fwupdmgr get-updates
+fwupdmgr update
+
+sudo reboot
+
+'''future'''
+# gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+# gsettings set org.gnome.desktop.interface icon-theme 'BigSur'
+# gsettings get org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/macOS-BS1.jpg'
+
+# sudo flatpak -y install mattermost telegram slack discord app/org.gimp.GIMP/x86_64/stable app/org.videolan.VLC/x86_64/stable us.zoom.Zoom
 #vscode com.visualstudio.code
 
 # curl https://build.opensuse.org/projects/home:manuelschneid3r/public_key |  apt-key add -
@@ -58,11 +71,3 @@ sudo flatpak -y install mattermost telegram slack discord app/org.gimp.GIMP/x86_
 # wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key -O "/etc/apt/trusted.gpg.d/home:manuelschneid3r.asc"
 # sudo apt update
 # sudo apt install albert -y
-
-fwupdmgr get-devices
-fwupdmgr get-updates
-fwupdmgr update
-
-
-
-echo "Done - Reboot"
