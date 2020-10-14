@@ -5,6 +5,9 @@ xrandr --output eDP-1 --mode 1920x1080
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.desktop.interface cursor-size 48
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.2
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+gsettings set org.gnome.desktop.interface clock-show-weekday true
+gsettings set org.gnome.desktop.interface clock-show-seconds true
 killall -3 gnome-shell
 
 #apt/flatpak updates
@@ -20,12 +23,12 @@ sudo apt install -y gnome-tweaks git caffeine
 git clone https://github.com/amadotejada/popos-bootstrap.git ~/macos
 mkdir ~/.themes
 mkdir ~/.icons
-cp -rf ~/macos/themes/* ~/.themes
-cp -rf ~/macos/icons/* ~/.icons
-cp -rf ~/macos/wallpapers/* /usr/share/backgrounds/
+sudo cp -rf ~/macos/themes/* ~/.themes
+sudo cp -rf ~/macos/icons/* ~/.icons
+sudo cp -rf ~/macos/wallpapers/* /usr/share/backgrounds/
 
 #set theme
-gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/tony-webster-97532.jpg'
+gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/pop/tony-webster-97532.jpg'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-dark"
