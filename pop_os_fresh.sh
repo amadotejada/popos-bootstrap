@@ -1,4 +1,7 @@
 
+gsettings set com.system76.hidpi enable false
+xrandr --output eDP-1 --mode 1920x1080
+
 sudo apt update -y &&  sudo apt full-upgrade -y &&  sudo apt autoremove -y &&  sudo apt clean -y &&  sudo apt autoclean -y
 sudo flatpak update
 sudo pop-upgrade release update
@@ -14,11 +17,14 @@ cp -rf ~/macos/themes/* ~/.themes
 cp -rf ~/macos/icons/* ~/.icons
 cp -rf ~/macos/wallpapers/* /usr/share/backgrounds/
 
+
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-dark"
 gsettings set org.gnome.desktop.wm.preferences theme "WhiteSur-dark"
 gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors-light'
+gsettings set org.gnome.desktop.interface cursor-size 32
+
 # gsettings set org.gnome.desktop.interface icon-theme 'BigSur'
 # gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/macOS-BS2.jpg'
 # gsettings get org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/macOS-BS1.jpg'
