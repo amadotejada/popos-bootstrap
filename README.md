@@ -1,1 +1,1 @@
-# gnome-macos-theme
+# popos-bootstrap
