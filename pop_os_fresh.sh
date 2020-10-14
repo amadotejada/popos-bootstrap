@@ -1,7 +1,10 @@
 
+#screen settings
 gsettings set com.system76.hidpi enable false
 xrandr --output eDP-1 --mode 1920x1080
+gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 
+#apt/flatpak updates
 sudo apt update -y &&  sudo apt full-upgrade -y &&  sudo apt autoremove -y &&  sudo apt clean -y &&  sudo apt autoclean -y
 sudo flatpak update
 sudo pop-upgrade release update
@@ -10,6 +13,7 @@ sudo pop-upgrade release upgrade
 #dependency
 sudo apt install -y gnome-tweaks git caffeine
 
+#github files
 git clone https://github.com/amadotejada/popos-bootstrap.git ~/macos
 mkdir ~/.themes
 mkdir ~/.icons
@@ -17,7 +21,7 @@ cp -rf ~/macos/themes/* ~/.themes
 cp -rf ~/macos/icons/* ~/.icons
 cp -rf ~/macos/wallpapers/* /usr/share/backgrounds/
 
-
+#set theme
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-dark"
