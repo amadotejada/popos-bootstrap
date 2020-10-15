@@ -1,3 +1,4 @@
+#!/bin/bash
 
 #screen settings
 gsettings set com.system76.hidpi enable false
@@ -12,13 +13,14 @@ gsettings set org.gnome.desktop.interface enable-animations false
 killall -3 gnome-shell
 
 #apt/flatpak updates
+sudo add-apt-repository -y ppa:sebastian-stenzel/cryptomator
 sudo apt update -y &&  sudo apt full-upgrade -y
 sudo flatpak update
 sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
 
 #dependency
-sudo apt install -y gnome-tweaks git
+sudo apt install -y gnome-tweaks git cryptomator
 
 #github files
 git clone https://github.com/amadotejada/popos-bootstrap.git ~/macos
