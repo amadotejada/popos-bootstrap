@@ -68,6 +68,9 @@ hello=$(whoami)
 sudo sed -i 's/#  AutomaticLoginEnable = true[^ ]*/AutomaticLoginEnable=True/' /etc/gdm3/custom.conf
 sudo sed -i 's/#  AutomaticLogin = user1[^ ]*/AutomaticLogin='"$hello"'/' /etc/gdm3/custom.conf
 
+#install flatpaks
+sudo flatpak -y install flathub io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP org.videolan.VLC us.zoom.Zoom
+
 #check/update firmwares
 fwupdmgr get-devices
 fwupdmgr get-updates
@@ -79,10 +82,6 @@ echo "Done - Reboot"
 # gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 # gsettings set org.gnome.desktop.interface icon-theme 'BigSur'
 # gsettings get org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/macOS-BS1.jpg'
-
-# sudo flatpak -y install mattermost telegram slack discord app/org.gimp.GIMP/x86_64/stable app/org.videolan.VLC/x86_64/stable us.zoom.Zoom
-#vscode com.visualstudio.code
-
 # curl https://build.opensuse.org/projects/home:manuelschneid3r/public_key |  apt-key add -
 # echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_20.04/ /' |  tee /etc/apt/sources.list.d/home:manuelschneid3r.list
 # wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key -O "/etc/apt/trusted.gpg.d/home:manuelschneid3r.asc"
