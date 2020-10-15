@@ -18,7 +18,7 @@ sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
 
 #dependency
-sudo apt install -y gnome-tweaks git caffeine
+sudo apt install -y gnome-tweaks git
 
 #github files
 git clone https://github.com/amadotejada/popos-bootstrap.git ~/macos
