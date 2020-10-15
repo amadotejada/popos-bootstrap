@@ -73,7 +73,7 @@ fwupdmgr update
 
 echo "Done - Reboot"
 
-'''future'''
+#future
 # gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 # gsettings set org.gnome.desktop.interface icon-theme 'BigSur'
 # gsettings get org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/macOS-BS1.jpg'
