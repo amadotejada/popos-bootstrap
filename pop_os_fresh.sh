@@ -18,6 +18,8 @@ sudo apt update -y &&  sudo apt full-upgrade -y
 sudo flatpak update
 sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
+sudo dpkg --configure -a
+sudo apt full-upgrade -y --fix-broken
 
 #dependency
 sudo apt install -y gnome-tweaks git cryptomator
@@ -69,7 +71,7 @@ sudo sed -i 's/#  AutomaticLoginEnable = true[^ ]*/AutomaticLoginEnable=True/' /
 sudo sed -i 's/#  AutomaticLogin = user1[^ ]*/AutomaticLogin='"$hello"'/' /etc/gdm3/custom.conf
 
 #install flatpaks
-sudo flatpak -y install flathub io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP org.videolan.VLC us.zoom.Zoom
+flatpak install -y flathub io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP org.videolan.VLC us.zoom.Zoom
 
 #check/update firmwares
 fwupdmgr get-devices
