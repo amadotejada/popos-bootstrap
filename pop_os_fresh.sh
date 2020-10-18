@@ -25,20 +25,20 @@ sudo apt full-upgrade -y --fix-broken
 sudo apt install -y gnome-tweaks git cryptomator
 
 #github files
-git clone https://github.com/amadotejada/popos-bootstrap.git ~/macos
-mkdir ~/.themes
-mkdir ~/.icons
-sudo cp -rf ~/macos/themes/* ~/.themes
-sudo cp -rf ~/macos/icons/* ~/.icons
-sudo cp -rf ~/macos/wallpapers/* /usr/share/backgrounds/
+# git clone https://github.com/amadotejada/popos-bootstrap.git ~/macos
+# mkdir ~/.themes
+# mkdir ~/.icons
+# sudo cp -rf ~/macos/themes/* ~/.themes
+# sudo cp -rf ~/macos/icons/* ~/.icons
+# sudo cp -rf ~/macos/wallpapers/* /usr/share/backgrounds/
 
-#set theme
-gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/pop/tony-webster-97532.jpg'
-gsettings set org.gnome.mutter center-new-windows 'true'
-gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
-gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-dark"
-gsettings set org.gnome.desktop.wm.preferences theme "WhiteSur-dark"
-gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors-light'
+# #set theme
+# gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/pop/tony-webster-97532.jpg'
+# gsettings set org.gnome.mutter center-new-windows 'true'
+# gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
+# gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-dark"
+# gsettings set org.gnome.desktop.wm.preferences theme "WhiteSur-dark"
+# gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors-light'
 
 wget https://go.microsoft.com/fwlink/?LinkID=760868 -O ~/vscode-latest.deb
 sudo apt install -y ./vscode-latest.deb
@@ -52,7 +52,7 @@ wget https://addons.mozilla.org/firefox/downloads/latest/chrome-gnome-shell@gnom
 firefox ~/chrome-gnome-shell.xpi
 rm chrome-gnome-shell.xpi
 
-firefox https://extensions.gnome.org/extension/307/dash-to-dock/ https://extensions.gnome.org/extension/277/impatience/ https://extensions.gnome.org/extension/517/caffeine/ https://extensions.gnome.org/extension/945/cpu-power-manager/ https://extensions.gnome.org/extension/779/clipboard-indicator/ https://extensions.gnome.org/extension/1036/extensions/ https://extensions.gnome.org/extension/744/hide-activities-button/ https://extensions.gnome.org/extension/750/openweather/ https://extensions.gnome.org/extension/905/refresh-wifi-connections/ https://extensions.gnome.org/extension/1031/topicons/ https://extensions.gnome.org/extension/442/drop-down-terminal/ https://extensions.gnome.org/extension/760/minimize-all/ 
+firefox https://extensions.gnome.org/extension/307/dash-to-dock/ https://extensions.gnome.org/extension/277/impatience/ https://extensions.gnome.org/extension/517/caffeine/ https://extensions.gnome.org/extension/945/cpu-power-manager/ https://extensions.gnome.org/extension/779/clipboard-indicator/ https://extensions.gnome.org/extension/1036/extensions/ https://extensions.gnome.org/extension/442/drop-down-terminal/ https://extensions.gnome.org/extension/760/minimize-all/ 
 
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock animate-show-apps false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
