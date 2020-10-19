@@ -49,6 +49,13 @@ wget https://github.com/Automattic/simplenote-electron/releases/download/v1.21.1
 sudo apt install -y ./simplenote.deb
 rm simplenote.deb
 
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
+sudo echo "deb http://apt.insync.io/ubuntu focal non-free contrib" | sudo tee -a /etc/apt/sources.list.d/insync.list
+sudo apt update -y &&  sudo apt install -y insync
+
+sudo apt install -y tigervnc-viewer
+# sudo apt-get install -y ubuntu-restricted-extras
+
 #expressvpn
 wget https://www.expressvpn.com/expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
 gpg --import expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
@@ -69,6 +76,13 @@ flatpak install -y flathub io.bit3.WhatsAppQT com.obsproject.Studio com.mattermo
 fwupdmgr get-devices
 fwupdmgr get-updates
 fwupdmgr update
+
+sudo dpkg --configure -a
+sudo apt full-upgrade -y --fix-broken
+sudo apt update -y &&  sudo apt full-upgrade -y
+sudo flatpak update
+sudo pop-upgrade release update
+sudo pop-upgrade release upgrade
 
 echo "Done - Reboot"
 
