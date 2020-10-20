@@ -45,7 +45,7 @@ wget https://go.microsoft.com/fwlink/?LinkID=760868 -O ~/vscode-latest.deb
 sudo apt install -y ./vscode-latest.deb
 rm vscode-latest.deb
 
-wget https://github.com/Automattic/simplenote-electron/releases/download/v1.21.1/Simplenote-linux-2.0.0-amd64.deb -O ~/simplenote.deb
+wget https://github.com/Automattic/simplenote-electron/releases/download/v2.0.0/Simplenote-linux-2.0.0-amd64.deb -O ~/simplenote.deb
 sudo apt install -y ./simplenote.deb
 rm simplenote.deb
 
