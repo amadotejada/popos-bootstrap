@@ -53,7 +53,10 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
 sudo echo "deb http://apt.insync.io/ubuntu focal non-free contrib" | sudo tee -a /etc/apt/sources.list.d/insync.list
 sudo apt update -y &&  sudo apt install -y insync
 
-sudo apt install -y tigervnc-viewer
+sudo apt-key --keyring /usr/share/keyrings/1password.gpg adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password.gpg] https://downloads.1password.com/linux/debian edge main' | sudo tee /etc/apt/sources.list.d/1password.list
+
+sudo apt update && sudo apt install -y tigervnc-viewer htop 1password
 # sudo apt-get install -y ubuntu-restricted-extras
 
 #expressvpn
@@ -70,7 +73,7 @@ sudo sed -i 's/#  AutomaticLoginEnable = true[^ ]*/AutomaticLoginEnable=True/' /
 sudo sed -i 's/#  AutomaticLogin = user1[^ ]*/AutomaticLogin='"$hello"'/' /etc/gdm3/custom.conf
 
 #install flatpaks
-flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP org.videolan.VLC us.zoom.Zoom
+flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client org.videolan.VLC us.zoom.Zoom
 
 #check/update firmwares
 fwupdmgr get-devices
