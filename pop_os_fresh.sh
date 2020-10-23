@@ -21,7 +21,7 @@ gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
-gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/pop/tony-webster-97532.jpg'
+gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/pop/kate-hazen-unleash-your-robot.png'
 # gsettings set org.gnome.mutter center-new-windows 'true'
 
 #gnome-extentions
@@ -32,7 +32,8 @@ rm chrome-gnome-shell.xpi
 wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x gnome-shell-extension-installer
 sudo mv gnome-shell-extension-installer /usr/bin/
-gnome-shell-extension-installer 307 277 517 945 779 1036 442 760 1401 1276 --yes
+sudo gnome-shell-extension-installer --update
+sudo gnome-shell-extension-installer 307 277 517 945 779 1036 442 760 1401 1276 --yes
 killall -3 gnome-shell
 
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock animate-show-apps false
@@ -63,7 +64,7 @@ sudo apt update && sudo apt install -y tigervnc-viewer htop 1password
 wget https://www.expressvpn.com/expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
 gpg --import expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
 rm expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
-wget https://www.expressvpn.works/clients/linux/expressvpn_3.1.0.34-1_amd64.deb -O ~/expressvpn.deb
+wget https://www.expressvpn.works/clients/linux/expressvpn_3.2.0.8-1_amd64.deb -O ~/expressvpn.deb
 sudo apt install -y ./expressvpn.deb
 rm expressvpn.deb
 
