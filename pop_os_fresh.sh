@@ -32,8 +32,13 @@ rm chrome-gnome-shell.xpi
 wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x gnome-shell-extension-installer
 sudo mv gnome-shell-extension-installer /usr/bin/
-gnome-shell-extension-installer 307 277 517 945 779 1036 442 760 1401 1276 --yes
+gnome-shell-extension-installer 307 517 779 1036 1401 1276 --yes
 killall -3 gnome-shell
+
+# 945 powermenu
+# 442 drop down terminal
+# 760 minimize all
+# 277 impatience
 
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock animate-show-apps false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
@@ -77,7 +82,7 @@ flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com
 
 #check/update firmwares
 fwupdmgr get-devices
-fwupdmgr get-updates
+fwupdmgr get-updates -y
 fwupdmgr update
 
 sudo dpkg --configure -a
