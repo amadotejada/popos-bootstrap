@@ -22,7 +22,7 @@ gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/pop/tony-webster-97532.jpg'
-gsettings set org.gnome.mutter center-new-windows 'true'
+# gsettings set org.gnome.mutter center-new-windows 'true'
 
 #gnome-extentions
 wget https://addons.mozilla.org/firefox/downloads/latest/chrome-gnome-shell@gnome.org -O ~/chrome-gnome-shell.xpi
