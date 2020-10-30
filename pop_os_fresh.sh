@@ -11,6 +11,18 @@ sudo apt full-upgrade -y --fix-broken
 sudo apt install -y gnome-tweaks git cryptomator tlp powertop
 sudo tlp start
 
+#fix intel tearing
+sudo mkdir /etc/X11/xorg.conf.d/
+echo 'Section "Module"
+    Load "dri3"
+EndSection
+
+Section "Device"
+    Identifier  "Intel Graphics"
+    Driver      "intel"
+    Option      "DRI"   "3"
+EndSection' | sudo tee /etc/X11/xorg.conf.d/20-intel-graphics.conf
+
 #screen settings
 gsettings set com.system76.hidpi enable false
 xrandr --output eDP-1 --mode 1920x1080
