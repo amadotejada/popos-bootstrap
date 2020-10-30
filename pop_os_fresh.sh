@@ -39,6 +39,7 @@ gsettings set org.gnome.desktop.a11y always-show-universal-access-status true
 # gsettings set org.gnome.mutter center-new-windows 'true'
 
 #gnome-extentions
+curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
 wget https://addons.mozilla.org/firefox/downloads/latest/chrome-gnome-shell@gnome.org -O ~/chrome-gnome-shell.xpi
 firefox ~/chrome-gnome-shell.xpi
 rm chrome-gnome-shell.xpi
