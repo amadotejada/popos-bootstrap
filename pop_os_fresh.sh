@@ -23,7 +23,7 @@ Section "Device"
     Option      "DRI"   "3"
 EndSection' | sudo tee /etc/X11/xorg.conf.d/20-intel-graphics.conf
 
-#screen settings
+#desktop settings
 gsettings set com.system76.hidpi enable false
 xrandr --output eDP-1 --mode 1920x1080
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
@@ -35,6 +35,7 @@ gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/pop/kate-hazen-unleash-your-robot.png'
+gsettings set org.gnome.desktop.a11y always-show-universal-access-status true
 # gsettings set org.gnome.mutter center-new-windows 'true'
 
 #gnome-extentions
