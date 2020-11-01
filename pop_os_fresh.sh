@@ -110,6 +110,8 @@ sudo flatpak update
 sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
 
+sudo kernelstub --delete-options "quiet systemd.show_status=false splash"
+
 echo "Done - Reboot"
 
 # future
