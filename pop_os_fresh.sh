@@ -8,7 +8,7 @@ sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
 sudo dpkg --configure -a
 sudo apt full-upgrade -y --fix-broken
-sudo apt install -y gnome-tweaks git cryptomator tlp powertop github-desktop python3-pip
+sudo apt install -y gnome-tweaks git cryptomator tlp powertop github-desktop python3-pip vlc
 sudo tlp start
 
 #fix intel tearing
@@ -109,8 +109,7 @@ sudo pop-upgrade release upgrade
 
 sudo kernelstub --delete-options "quiet systemd.show_status=false splash"
 
-#install flatpaks
-flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client org.videolan.VLC us.zoom.Zoom ch.protonmail.protonmail-bridge org.mozilla.Thunderbird com.ulduzsoft.Birdtray org.remmina.Remmina org.signal.Signal org.audacityteam.Audacity com.uploadedlobster.peek
+flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client us.zoom.Zoom ch.protonmail.protonmail-bridge org.mozilla.Thunderbird com.ulduzsoft.Birdtray org.remmina.Remmina org.signal.Signal org.audacityteam.Audacity com.uploadedlobster.peek
 
 echo "Done - Reboot"
 
