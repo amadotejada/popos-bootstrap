@@ -95,9 +95,6 @@ sudo sed -i 's/#  AutomaticLoginEnable = true[^ ]*/AutomaticLoginEnable=True/' /
 sudo sed -i 's/#  AutomaticLogin = user1[^ ]*/AutomaticLogin='"$hello"'/' /etc/gdm3/custom.conf
 sudo sed -i 's/WaylandEnable=false[^ ]*/WaylandEnable=true/' /etc/gdm3/custom.conf
 
-#install flatpaks
-flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client org.videolan.VLC us.zoom.Zoom ch.protonmail.protonmail-bridge org.mozilla.Thunderbird com.ulduzsoft.Birdtray org.remmina.Remmina org.signal.Signal org.audacityteam.Audacity com.uploadedlobster.peek
-
 #check/update firmwares
 fwupdmgr get-devices
 fwupdmgr get-updates -y
@@ -111,6 +108,9 @@ sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
 
 sudo kernelstub --delete-options "quiet systemd.show_status=false splash"
+
+#install flatpaks
+flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client org.videolan.VLC us.zoom.Zoom ch.protonmail.protonmail-bridge org.mozilla.Thunderbird com.ulduzsoft.Birdtray org.remmina.Remmina org.signal.Signal org.audacityteam.Audacity com.uploadedlobster.peek
 
 echo "Done - Reboot"
 
