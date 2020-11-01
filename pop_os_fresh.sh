@@ -8,7 +8,7 @@ sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
 sudo dpkg --configure -a
 sudo apt full-upgrade -y --fix-broken
-sudo apt install -y gnome-tweaks git cryptomator tlp powertop
+sudo apt install -y gnome-tweaks git cryptomator tlp powertop github-desktop
 sudo tlp start
 
 #fix intel tearing
@@ -36,10 +36,9 @@ gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/pop/kate-hazen-unleash-your-robot.png'
 gsettings set org.gnome.desktop.a11y always-show-universal-access-status true
-# gsettings set org.gnome.mutter center-new-windows 'true'
+gsettings set org.gnome.mutter center-new-windows 'true'
 
 #gnome-extentions
-curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
 wget https://addons.mozilla.org/firefox/downloads/latest/chrome-gnome-shell@gnome.org -O ~/chrome-gnome-shell.xpi
 firefox ~/chrome-gnome-shell.xpi
 rm chrome-gnome-shell.xpi
@@ -47,7 +46,7 @@ rm chrome-gnome-shell.xpi
 wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x gnome-shell-extension-installer
 sudo mv gnome-shell-extension-installer /usr/bin/
-gnome-shell-extension-installer 307 517 1036 1401 1276 945 779 --yes
+gnome-shell-extension-installer 307 517 1036 1401 1276 779 --yes
 killall -3 gnome-shell
 
 # 945 powermenu
@@ -55,6 +54,8 @@ killall -3 gnome-shell
 # 760 minimize all
 # 277 impatience
 # 779 clipboard
+
+curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
 
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock animate-show-apps false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
@@ -95,7 +96,7 @@ sudo sed -i 's/#  AutomaticLogin = user1[^ ]*/AutomaticLogin='"$hello"'/' /etc/g
 sudo sed -i 's/WaylandEnable=false[^ ]*/WaylandEnable=true/' /etc/gdm3/custom.conf
 
 #install flatpaks
-flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client org.videolan.VLC us.zoom.Zoom
+flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client org.videolan.VLC us.zoom.Zoom ch.protonmail.protonmail-bridge org.mozilla.Thunderbird com.ulduzsoft.Birdtray org.remmina.Remmina org.signal.Signal org.audacityteam.Audacity com.uploadedlobster.peek
 
 #check/update firmwares
 fwupdmgr get-devices
