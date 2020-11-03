@@ -109,7 +109,7 @@ sudo pop-upgrade release upgrade
 
 sudo kernelstub --delete-options "quiet systemd.show_status=false splash"
 
-flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client us.zoom.Zoom ch.protonmail.protonmail-bridge org.mozilla.Thunderbird com.ulduzsoft.Birdtray org.remmina.Remmina org.signal.Signal org.audacityteam.Audacity com.uploadedlobster.peek
+flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client us.zoom.Zoom ch.protonmail.protonmail-bridge org.mozilla.Thunderbird com.ulduzsoft.Birdtray org.remmina.Remmina org.signal.Signal org.audacityteam.Audacity com.uploadedlobster.peek com.calibre_ebook.calibre
 
 echo "Done - Reboot"
 
