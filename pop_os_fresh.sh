@@ -71,6 +71,10 @@ wget https://github.com/Automattic/simplenote-electron/releases/download/v2.0.0/
 sudo apt install -y ./simplenote.deb
 rm simplenote.deb
 
+wget "https://www.ktechpit.com/USS/WW/deb/download.php?f=package.deb&fc=wonderwall_latest_amd64.deb" -O ~/wonderwall.deb
+sudo apt install -y ./wonderwall.deb
+rm wonderwall.deb
+
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
 sudo echo "deb http://apt.insync.io/ubuntu focal non-free contrib" | sudo tee -a /etc/apt/sources.list.d/insync.list
 sudo apt update -y &&  sudo apt install -y insync
@@ -78,7 +82,7 @@ sudo apt update -y &&  sudo apt install -y insync
 sudo apt-key --keyring /usr/share/keyrings/1password.gpg adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password.gpg] https://downloads.1password.com/linux/debian edge main' | sudo tee /etc/apt/sources.list.d/1password.list
 
-sudo apt update && sudo apt install -y tigervnc-viewer htop 1password
+sudo apt update && sudo apt install -y tigervnc-viewer htop 1password tilix
 # sudo apt-get install -y ubuntu-restricted-extras
 
 #expressvpn
@@ -109,7 +113,8 @@ sudo pop-upgrade release upgrade
 
 sudo kernelstub --delete-options "quiet systemd.show_status=false splash"
 
-flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client us.zoom.Zoom ch.protonmail.protonmail-bridge org.mozilla.Thunderbird com.ulduzsoft.Birdtray org.remmina.Remmina org.signal.Signal org.audacityteam.Audacity com.uploadedlobster.peek com.calibre_ebook.calibre com.sublimetext.three com.spotify.Client
+flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client us.zoom.Zoom ch.protonmail.protonmail-bridge org.mozilla.Thunderbird com.ulduzsoft.Birdtray org.remmina.Remmina org.signal.Signal org.audacityteam.Audacity com.uploadedlobster.peek com.calibre_ebook.calibre com.sublimetext.three com.spotify.Client fr.handbrake.ghb
+
 
 echo "Done - Reboot"
 
