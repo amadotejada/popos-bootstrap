@@ -73,7 +73,7 @@ wget https://go.microsoft.com/fwlink/?LinkID=760868 -O ~/vscode-latest.deb
 sudo apt install -y ./vscode-latest.deb
 rm vscode-latest.deb
 
-wget https://github.com/Automattic/simplenote-electron/releases/download/v2.0.0/Simplenote-linux-2.0.0-amd64.deb -O ~/simplenote.deb
+wget https://github.com/Automattic/simplenote-electron/releases/download/v2.1.0/Simplenote-linux-2.1.0-amd64.deb -O ~/simplenote.deb
 sudo apt install -y ./simplenote.deb
 rm simplenote.deb
 
@@ -95,7 +95,7 @@ sudo apt update && sudo apt install -y tigervnc-viewer htop 1password tilix
 wget https://www.expressvpn.com/expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
 gpg --import expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
 rm expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
-wget https://www.expressvpn.works/clients/linux/expressvpn_3.2.0.8-1_amd64.deb -O ~/expressvpn.deb
+wget https://www.expressvpn.works/clients/linux/expressvpn_3.2.1.2-1_amd64.deb -O ~/expressvpn.deb
 sudo apt install -y ./expressvpn.deb
 rm expressvpn.deb
 
