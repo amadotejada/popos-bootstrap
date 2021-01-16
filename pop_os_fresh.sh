@@ -26,6 +26,8 @@ EndSection' | sudo tee /etc/X11/xorg.conf.d/20-intel-graphics.conf
 #desktop settings
 gsettings set com.system76.hidpi enable false
 xrandr --output eDP-1 --mode 1920x1080
+gsettings set org.gnome.desktop.peripherals.touchpad speed 0.7
+# gsettings set org.gnome.desktop.peripherals.mouse speed 0.0
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.desktop.interface cursor-size 32
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
