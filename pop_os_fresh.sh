@@ -8,7 +8,7 @@ sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
 sudo dpkg --configure -a
 sudo apt full-upgrade -y --fix-broken
-sudo apt install -y gnome-tweaks git cryptomator tlp powertop github-desktop python3-pip vlc neofetch apt-transport-https curl gnupg
+sudo apt install -y gnome-tweaks git cryptomator tlp powertop github-desktop python3-pip vlc neofetch apt-transport-https curl gnupg xserver-xorg-input-synaptics
 sudo tlp start
 
 #fix intel tearing
