@@ -8,7 +8,7 @@ sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
 sudo dpkg --configure -a
 sudo apt full-upgrade -y --fix-broken
-sudo apt install -y gnome-tweaks git cryptomator tlp powertop github-desktop python3-pip vlc neofetch apt-transport-https curl gnupg xserver-xorg-input-synaptics
+sudo apt install -y gnome-tweaks git cryptomator tlp powertop github-desktop python3-pip vlc neofetch apt-transport-https
 sudo tlp start
 
 #fix intel tearing
@@ -78,24 +78,24 @@ wget https://github.com/Automattic/simplenote-electron/releases/download/v2.4.0/
 sudo apt install -y ./simplenote.deb
 rm simplenote.deb
 
-# wget "https://www.ktechpit.com/USS/WW/deb/download.php?f=package.deb&fc=wonderwall_latest_amd64.deb" -O ~/wonderwall.deb
-# sudo apt install -y ./wonderwall.deb
-# rm wonderwall.deb
-
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
 sudo echo "deb http://apt.insync.io/ubuntu focal non-free contrib" | sudo tee -a /etc/apt/sources.list.d/insync.list
 
-sudo apt-key --keyring /usr/share/keyrings/1password.gpg adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
-echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password.gpg] https://downloads.1password.com/linux/debian edge main' | sudo tee /etc/apt/sources.list.d/1password.list
+sudo apt update -y && sudo apt install -y tigervnc-viewer htop tilix insync
 
-sudo apt update -y && sudo apt install -y tigervnc-viewer htop 1password tilix insync
-# sudo apt-get install -y ubuntu-restricted-extras
+# sudo apt-key --keyring /usr/share/keyrings/1password.gpg adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
+# echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password.gpg] https://downloads.1password.com/linux/debian edge main' | sudo tee /etc/apt/sources.list.d/1password.list
+
+#bitwarden
+wget https://github.com/bitwarden/desktop/releases/download/v1.23.1/Bitwarden-1.23.1-amd64.deb -O ~/bitwarden.deb
+sudo apt install -y ./bitwarden.deb
+rm bitwarden.deb
 
 #expressvpn
 wget https://www.expressvpn.com/expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
 gpg --import expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
 rm expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
-wget https://www.expressvpn.works/clients/linux/expressvpn_3.4.1.4-1_amd64.deb -O ~/expressvpn.deb
+wget https://www.expressvpn.works/clients/linux/expressvpn_3.4.2.4-1_amd64.deb -O ~/expressvpn.deb
 sudo apt install -y ./expressvpn.deb
 rm expressvpn.deb
 
@@ -117,19 +117,9 @@ sudo flatpak update
 sudo pop-upgrade release update
 sudo pop-upgrade release upgrade
 
-# sudo kernelstub --delete-options "quiet systemd.show_status=false splash"
 
 flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client us.zoom.Zoom ch.protonmail.protonmail-bridge org.mozilla.Thunderbird com.ulduzsoft.Birdtray org.remmina.Remmina org.signal.Signal org.audacityteam.Audacity com.uploadedlobster.peek com.calibre_ebook.calibre com.spotify.Client fr.handbrake.ghb
 
 
 echo "Done - Reboot"
 
-# future
-# gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-# gsettings set org.gnome.desktop.interface icon-theme 'BigSur'
-# gsettings get org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/macOS-BS1.jpg'
-# curl https://build.opensuse.org/projects/home:manuelschneid3r/public_key |  apt-key add -
-# echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_20.04/ /' |  tee /etc/apt/sources.list.d/home:manuelschneid3r.list
-# wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key -O "/etc/apt/trusted.gpg.d/home:manuelschneid3r.asc"
-# sudo apt update
-# sudo apt install albert -y
