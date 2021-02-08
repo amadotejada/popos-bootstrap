@@ -4,8 +4,6 @@
 sudo add-apt-repository -y ppa:sebastian-stenzel/cryptomator
 sudo apt update -y &&  sudo apt full-upgrade -y
 sudo flatpak update
-sudo pop-upgrade release update
-sudo pop-upgrade release upgrade
 sudo dpkg --configure -a
 sudo apt full-upgrade -y --fix-broken
 sudo apt install -y gnome-tweaks git cryptomator tlp powertop github-desktop python3-pip vlc neofetch apt-transport-https
@@ -24,17 +22,17 @@ Section "Device"
 EndSection' | sudo tee /etc/X11/xorg.conf.d/20-intel-graphics.conf
 
 #desktop settings
+# gsettings set org.gnome.desktop.peripherals.touchpad speed 0.7
+# gsettings set org.gnome.desktop.peripherals.mouse speed 0.0
+# gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
+# gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set com.system76.hidpi enable false
 xrandr --output eDP-1 --mode 1920x1080
-gsettings set org.gnome.desktop.peripherals.touchpad speed 0.7
-# gsettings set org.gnome.desktop.peripherals.mouse speed 0.0
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.desktop.interface cursor-size 32
-gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.desktop.interface clock-show-seconds true
-# gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/pop/kate-hazen-unleash-your-robot.png'
 gsettings set org.gnome.desktop.a11y always-show-universal-access-status true
@@ -57,8 +55,6 @@ killall -3 gnome-shell
 # 277 impatience
 # 779 clipboard
 
-# curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
-
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock animate-show-apps false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/schemas/ set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
 
@@ -74,7 +70,7 @@ wget https://go.microsoft.com/fwlink/?LinkID=760868 -O ~/vscode-latest.deb
 sudo apt install -y ./vscode-latest.deb
 rm vscode-latest.deb
 
-wget https://github.com/Automattic/simplenote-electron/releases/download/v2.4.0/Simplenote-linux-2.4.0-amd64.deb -O ~/simplenote.deb
+wget https://github.com/Automattic/simplenote-electron/releases/download/v2.5.0/Simplenote-linux-2.5.0-amd64.deb -O ~/simplenote.deb
 sudo apt install -y ./simplenote.deb
 rm simplenote.deb
 
@@ -87,7 +83,7 @@ sudo apt update -y && sudo apt install -y tigervnc-viewer htop tilix insync
 # echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password.gpg] https://downloads.1password.com/linux/debian edge main' | sudo tee /etc/apt/sources.list.d/1password.list
 
 #bitwarden
-wget https://github.com/bitwarden/desktop/releases/download/v1.23.1/Bitwarden-1.23.1-amd64.deb -O ~/bitwarden.deb
+wget https://github.com/bitwarden/desktop/releases/download/v1.24.6/Bitwarden-1.24.6-amd64.deb -O ~/bitwarden.deb
 sudo apt install -y ./bitwarden.deb
 rm bitwarden.deb
 
@@ -95,14 +91,14 @@ rm bitwarden.deb
 wget https://www.expressvpn.com/expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
 gpg --import expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
 rm expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
-wget https://www.expressvpn.works/clients/linux/expressvpn_3.4.2.4-1_amd64.deb -O ~/expressvpn.deb
+wget https://www.expressvpn.works/clients/linux/expressvpn_3.5.0.33-1_amd64.deb -O ~/expressvpn.deb
 sudo apt install -y ./expressvpn.deb
 rm expressvpn.deb
 
 #setup autologin
-hello=$(whoami)
-sudo sed -i 's/#  AutomaticLoginEnable = true[^ ]*/AutomaticLoginEnable=True/' /etc/gdm3/custom.conf
-sudo sed -i 's/#  AutomaticLogin = user1[^ ]*/AutomaticLogin='"$hello"'/' /etc/gdm3/custom.conf
+# hello=$(whoami)
+# sudo sed -i 's/#  AutomaticLoginEnable = true[^ ]*/AutomaticLoginEnable=True/' /etc/gdm3/custom.conf
+# sudo sed -i 's/#  AutomaticLogin = user1[^ ]*/AutomaticLogin='"$hello"'/' /etc/gdm3/custom.conf
 sudo sed -i 's/WaylandEnable=false[^ ]*/WaylandEnable=true/' /etc/gdm3/custom.conf
 
 #check/update firmwares
@@ -112,12 +108,9 @@ fwupdmgr update
 
 sudo dpkg --configure -a
 sudo apt full-upgrade -y --fix-broken
-sudo apt update -y &&  sudo apt full-upgrade -y
+sudo apt update -y && sudo apt full-upgrade -y
 sudo flatpak update
-sudo pop-upgrade release update
-sudo pop-upgrade release upgrade
-
-
+echo
 flatpak install -y flathub org.filezillaproject.Filezilla io.bit3.WhatsAppQT com.obsproject.Studio com.mattermost.Desktop org.telegram com.slack.Slack com.discordapp.Discord org.gimp.GIMP com.skype.Client us.zoom.Zoom ch.protonmail.protonmail-bridge org.mozilla.Thunderbird com.ulduzsoft.Birdtray org.remmina.Remmina org.signal.Signal org.audacityteam.Audacity com.uploadedlobster.peek com.calibre_ebook.calibre com.spotify.Client fr.handbrake.ghb
 
 
